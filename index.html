@@ -1,74 +1,288 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Propoal Generator</title>
-        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="html-docx.js"></script>
-    <script src="Blob.js"></script>
-    <script src="FileSaver.js"></script>
-    <script>
-        $(document).ready(function(){
-           var content=$('body').html();
-           var converted=htmlDocx.asBlob(content);
-            saveAs(converted,'test.docx');
-        });
-    </script>
+	<meta charset="UTF-8">
+	<title>Proposal Generator for F1Studioz</title>
+
+	<!-- Your META here -->
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="j-folder/css/demo.css">
+	<link rel="stylesheet" href="j-folder/css/font-awesome.min.css">
+	<link rel="stylesheet" href="j-folder/css/j-forms.css">
+
+	<!-- Scripts -->
+	<script src="j-folder/js/jquery.1.11.1.min.js"></script>
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+	<script src="j-folder/js/jquery.ui.min.js"></script>
+	<script src="j-folder/js/jquery.maskedinput.min.js"></script>
+	<script src="j-folder/js/jquery.validate.min.js"></script>
+	<script src="j-folder/js/jquery.form.min.js"></script>
+	<script src="j-folder/js/jQuery.download.js"></script>
+	<script src="html-docx.js"></script>
+	<script src="j-folder/js/j-forms.js"></script>
+
+	<!--[if lt IE 10]>
+			<script src="j-folder/js/jquery.placeholder.min.js"></script>
+		<![endif]-->
+
 </head>
 
-<body>
-    <h1>Memorandum of Understanding</h1>
-    <hr>
-    <p>f1Circle Designs Pvt Ltd (“f1Studioz” or “f1Circle”) &amp; ${CompanyRegisteredName} (“ ${CompanyName} ”), have agreed to enter into this Memorandum of Understanding, dated September 2, 2016.</p>
-    <p>f1Circle will create web application and mobile responsive design and UI development for ${CompanyName} ${pname}.</p>
-    <p>f1Studioz has appointed Mr. Santosh Shukla, Director to be the point of contact. Mr. ${CompanyPOC} , ${CompanyPOCDesignation} would be point of contact from ${CompanyName}’s side.</p>
-    <h2>Deliverables:</h2>
-    <p>f1Circle’s Team will provide the following for ${CompanyName} ${pname}website:</p>
-    <a href="">${Deliverable}</a>
-    <p>Also, as part of proposal, f1Circle will be doing at a minimum one round of feedback incorporation after the review is done by ${CompanyName}.</p>
-    <p>The entire deliverable is estimated to take approximately ${TotalEffort} of effort from f1circle’s side once the advance is received.</p>
-    <p>${CompanyName} is responsible for the content and Product data to be posted in the website. ${CompanyName} will also provide any additional inputs related to the idea/concept and content for the project.</p>
-    <h2>Scope:</h2>
-    <h3>${Scope}</h3>
-    <h2>Functionality:</h2>
-    <h3>${Functionality}</h3>
-    <h2>Process:</h2>
-    <p>Below is the process that would be followed along with the estimated timeline:</p>
-    <ul>
-        <li><strong>Discovery</strong>  (along with Product Owner)
-            <br>  Project Brief &amp; Goal Setting
-            <br>  UseCase, Feature and Functionality (Q&amp;A)</li>
-        <li><strong>Information Design</strong> TaskFlow
+<body class="bg-pic">
+	<div class="wrapper wrapper-640">
 
-            <br>  Information Architecture
-            <br>  Review
+		<form action="process.php" method="post" class="j-forms j-multistep" id="j-forms" novalidate>
 
-        </li>
-        <li><strong>Visual Design</strong>
-            <br>   Low Fidelity Wireframes of Key Task
-            <br>   Visual Design of Key Screens
-            <br>   Review &amp; Iterate
-            <br>   Rest of the Screens visual design
-            <br> Review and Feedback Incorporation</li>
-        <li><strong>Deliverables</strong>
-            <br>  Individual screens in PNG
-            <br>  Visual Style Guidelines -  Font Style, Color Codes
-            <br>  All the UI Assets utilised - icons etc
-            <br> HTML/CSS Code</li>
-    </ul>
-    <h2>Working Model:</h2>
-    <p>Review meetings to discuss progress and requirements between contacts of f1Circle UX Team and ${CompanyName} can be scheduled at a comfortable time for both parties over phone/skype (or in- person, if need be).</p>
-    <p>At a minimum, three meetings need to happen – one at the beginning to understand the requirements, one after the designs are ready for review and one after the website is ready.</p>
-    <h2>Timelines</h2>
-    <h3>${Timelines}</h3>
-    <p>The project is estimated to take around ${TotalEffort}of effort including the revisions. However, if significant extra effort (${GracePeriod})is involved in revisions, there would be additional charges associated at the rate of ${AdditionalChargesHourlyRate} per hour.</p>
-    <h2>Pricing</h2>
-    <p>The Pricing for the project will be ${TotalCost}. The amount is to be paid in 5 installments.</p>
-    <h3>${PricingBreakup}</h3>
-    <p>f1Circle will invoice ${CompanyName} appropriately for the above mentioned schedule. The amount will be payable within ${InvoicePayableWithinXDays} days from the date of invoice. The advance is payable immediately.</p>
-    <p>The wire transfer charges, if any will have to be borne by the client.</p>
-    <h2>Intellectual Property</h2>
-    <p>All the website deliverables including text, graphics, images and themes will remain sole IP of ${CompanyName}.</p>
+			<div class="header">
+				<p>Proposal Generator</p>
+			</div>
+			<!-- end /.header-->
 
+			<div class="content">
+
+				<!-- start steps -->
+				<div class="j-row">
+					<div class="span4 step">
+						<div class="steps">
+							<p>Company Details</p>
+						</div>
+					</div>
+					<div class="span4 step">
+						<div class="steps">
+							<p>Additional Details</p>
+						</div>
+					</div>
+					<div class="span4 step">
+						<div class="steps">
+							<p>Pricing Details</p>
+						</div>
+					</div>
+				</div>
+				<!-- end steps -->
+
+				<fieldset>
+
+					<div class="divider gap-bottom-25"></div>
+
+
+					<div class="j-row">
+						<div class="span6 unit">
+							<label class="label">Company Name</label>
+							<div class="input">
+								<input type="text" id="CompanyName" name="CompanyName" value="">
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Company Registered Name</label>
+							<div class="input">
+								<input type="text" id="CompanyRegisteredName" name="CompanyRegisteredName" value="">
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="j-row">
+						<div class="span6 unit">
+							<label class="label">Company POC</label>
+							<div class="input">
+								<input type="text" id="CompanyPOC" name="CompanyPOC">
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Company POC Designation</label>
+							<div class="input">
+								<input type="text" id="CompanyPOCDesignation" name="CompanyPOCDesignation">
+							</div>
+						</div>
+					</div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Project Name</label>
+							<div class="input">
+								<input type="text" id="ProjectName" name="ProjectName">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+
+					<div class="divider gap-bottom-25"></div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Deliverables</label>
+							<div class="input">
+								<textarea spellcheck="false" name="Deliverable">
+									<ol>
+										<li>Web Application Design</li>
+										<li>Mobile Design of the application (Responsive)</li>
+										<li>UI code (HTML / CSS)</li>
+									</ol>
+								</textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Scope</label>
+							<div class="input">
+								<textarea spellcheck="false" name="Scope">
+								<p>UX Design</p>
+<ul>
+<li>Information Architecture</li>
+<li>VisualDesign Website</li>
+<li>Visual Design – Mobile </li>
+</ul>
+<p>UI Implementation</p>
+<ul>
+<li>Responsivewebsiteimplementation</li>
+<li>Technologies – HTML5/CSS/Bootstrap</li>
+</ul>
+								</textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Functionality</label>
+							<div class="input">
+								<textarea spellcheck="false" name="Functionality">
+									<p>User</p>
+										<ul>
+											<li>Registration</li>
+											<li>Login/Logout</li>
+											<li>Navigate/Search associated public entities and Institutions</li>
+											<li>Request for associated forms related to institutions</li>
+											<li>View my and my family's (associated) M4C profile</li>
+											<li>Sharing information with others through M4C (Identity Transaction)</li>
+											<li>Receive information from others (Inbox)</li>
+											<li>View SmartContracts and make payment to Institutions (Institution Transaction)</li>
+											<li>Make Payments</li>
+											<li>Notifications</li>
+										</ul>
+										<p>Institution</p>
+										<ul>
+											<li>Registration</li>
+											<li>Login/Logout</li>
+											<li>Create and/or assign authorize roles to associated individuals within institution</li>
+											<li>Navigate / Search associated public entities</li>
+											<li>Upload/Update forms – Admission etc/.</li>
+											<li>Manage filled forms and shared info by others to institution (Identity Transaction)</li>
+											<li>Receive information from others (Inbox)</li>
+											<li>Update document shared by others (vaccination redbook etc.)</li>
+											<li>Send information to others (provisional admission letters, send invoice etc.)</li>
+											<li>Make Payments</li>
+											<li>Notifications</li>
+										</ul>
+								</textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Timelines</label>
+							<div class="input">
+								<textarea spellcheck="false" name="Timelines">
+									<p>Web Application UX - 4 weeks</p>
+										<ul>
+											<li>User – 2 weeks</li>
+											<li>Institution – 2 weeks</li>
+										</ul>
+									<p>Mobile ResponsiveUX - 4 weeks</p>
+										<ul>
+											<li>User – 2 weeks</li>
+											<li>Institution – 2 weeks</li>
+										</ul>
+									<p>UI Development (HTML/CSS/JS) – 6 weeks</p>
+								</textarea>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+
+					<div class="divider gap-bottom-25"></div>
+
+					<div class="j-row">
+						<div class="span12 unit">
+							<label class="label">Pricing Breakup</label>
+							<div class="input">
+								<textarea spellcheck="false" name="PricingBreakup">
+									<ul>
+										<li>Advance - INR XXX + Service Tax </li>
+										<li>Completion of Web UX (User & Institution) - INR XXX + Service </li>
+										<li>Completion of Mobile UX (User & Institution) - INR XXX + Service Tax </li>
+										<li>Completion of Responsive UI Development for User persona - INR XXX + Service Tax</li>
+										<li>Completion of Responsive UI Development for Institution persona –
+INR XXX + Service Tax
+</li>
+									</ul>
+								</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="j-row">
+						<div class="span6 unit">
+							<label class="label">Total Efforts</label>
+							<div class="input">
+								<input type="text" id="TotalEffort" name="TotalEffort">
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Grace Period</label>
+							<div class="input">
+								<input type="text" id="GracePeriod" name="GracePeriod">
+							</div>
+						</div>
+					</div>
+					<div class="j-row">
+						<div class="span6 unit">
+							<label class="label">Additional Charges Hourly Rate</label>
+							<div class="input">
+								<input type="text" id="AdditionalChargesHourlyRate" name="AdditionalChargesHourlyRate">
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Total Cost</label>
+							<div class="input">
+								<input type="text" id="TotalCost" name="TotalCost">
+							</div>
+						</div>
+					</div>
+					<div class="j-row">
+						<div class="span6 unit">
+							<label class="label">Invoice Payyable Within</label>
+							<div class="input">
+								<input type="text" id="InvoicePayableWithinXDays" name="InvoicePayableWithinXDays">
+							</div>
+						</div>
+					</div>
+
+				<!-- start response from server -->
+				<div id="response"></div>
+				<!-- end response from server -->
+
+				</fieldset>
+
+			</div>
+			<!-- end /.content -->
+
+			<div class="footer">
+				<button type="submit" class="primary-btn multi-submit-btn button-submit">Submit</button>
+				<button type="button" class="primary-btn multi-next-btn">Next</button>
+				<button type="button" class="secondary-btn multi-prev-btn">Back</button>
+			</div>
+			<!-- end /.footer -->
+
+		</form>
+	</div>
 </body>
-
 </html>
