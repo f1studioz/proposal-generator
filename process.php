@@ -9,11 +9,18 @@ $PHPWord = new PHPWord();
 $Deliverable = $_POST["Deliverable"];
 $DeliverableOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($Deliverable);
 
-$Scope = $_POST["Scope"];
-$ScopeOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($Scope);
+$ScopeDesign = $_POST["ScopeDesign"];
+$ScopeDesignOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($ScopeDesign);
 
-$Functionality = $_POST["Functionality"];
-$FunctionalityOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($Functionality);
+$ScopeImplementation = $_POST["ScopeImplementation"];
+$ScopeImplementationOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($ScopeImplementation);
+
+
+$FunctionalityUser = $_POST["FunctionalityUser"];
+$FunctionalityUserOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($FunctionalityUser);
+
+$FunctionalityInstitution = $_POST["FunctionalityInstitution"];
+$FunctionalityInstitutionOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($FunctionalityInstitution);
 
 $Timelines = $_POST["Timelines"];
 $TimelinesOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($Timelines);
@@ -21,7 +28,7 @@ $TimelinesOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($Timelines);
 $PricingBreakup = $_POST["PricingBreakup"];
 $PricingBreakupOpenXML = HTMLtoOpenXML::getInstance()->fromHTML($PricingBreakup);
 
-//echo $ScopeOpenXML; exit;
+//echo $ScopeImplementationOpenXML; exit;
 //print_r($_POST);exit;
 /*
 echo "Scope";
@@ -41,8 +48,10 @@ $document->setValue('CompanyPOC', $_POST["CompanyPOC"]);
 $document->setValue('CompanyPOCDesignation', $_POST["CompanyPOCDesignation"]);
 $document->setValue('pname', $_POST["ProjectName"]);
 $document->setValue('Deliverable', $DeliverableOpenXML);
-$document->setValue('Scope', $ScopeOpenXML);
-$document->setValue('Functionality', $FunctionalityOpenXML);
+$document->setValue('scopedesign', $ScopeDesignOpenXML);
+$document->setValue('scopeui', $ScopeImplementationOpenXML);
+$document->setValue('f1', $FunctionalityUserOpenXML);
+$document->setValue('f2', $FunctionalityInstitutionOpenXML);
 $document->setValue('Timelines', $TimelinesOpenXML);
 $document->setValue('PricingBreakup', $PricingBreakupOpenXML);
 $document->setValue('TotalEffort', $_POST["TotalEffort"]);

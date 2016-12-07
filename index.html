@@ -30,7 +30,7 @@
 </head>
 
 <body class="bg-pic">
-	<div class="wrapper wrapper-640">
+	<div class="wrapper wrapper-800">
 
 		<form action="process.php" method="post" class="j-forms j-multistep" id="j-forms" novalidate>
 
@@ -128,58 +128,38 @@
 					</div>
 
 					<div class="j-row">
-						<div class="span12 unit">
-							<label class="label">Scope</label>
+						<div class="span6 unit">
+							<label class="label">Scope-UX Design</label>
 							<div class="input">
-								<textarea spellcheck="false" name="Scope">
-								<p>UX Design</p>
-<ul>
-<li>Information Architecture</li>
-<li>VisualDesign Website</li>
-<li>Visual Design – Mobile </li>
-</ul>
-<p>UI Implementation</p>
-<ul>
-<li>Responsivewebsiteimplementation</li>
-<li>Technologies – HTML5/CSS/Bootstrap</li>
-</ul>
+								<textarea spellcheck="false" name="ScopeDesign">
+								<ul><li>- Information Architecture</li><li>- Visual Design -- Website</li><li>- Visual Design -- Mobile</li></ul><ul><li>- Responsive Website Implementation</li><li>- Technologies -- HTML5/CSS/Bootstrap</li></ul>
+								</textarea>
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Scope-UI Implementation</label>
+							<div class="input">
+								<textarea spellcheck="false" name="ScopeImplementation">
+								<ul><li>- Responsive Website Implementation</li><li>- Technologies -- HTML5/CSS/Bootstrap</li></ul>
 								</textarea>
 							</div>
 						</div>
 					</div>
 
 					<div class="j-row">
-						<div class="span12 unit">
-							<label class="label">Functionality</label>
+						<div class="span6 unit">
+							<label class="label">Functionality - User</label>
 							<div class="input">
-								<textarea spellcheck="false" name="Functionality">
-									<p>User</p>
-										<ul>
-											<li>Registration</li>
-											<li>Login/Logout</li>
-											<li>Navigate/Search associated public entities and Institutions</li>
-											<li>Request for associated forms related to institutions</li>
-											<li>View my and my family's (associated) M4C profile</li>
-											<li>Sharing information with others through M4C (Identity Transaction)</li>
-											<li>Receive information from others (Inbox)</li>
-											<li>View SmartContracts and make payment to Institutions (Institution Transaction)</li>
-											<li>Make Payments</li>
-											<li>Notifications</li>
-										</ul>
-										<p>Institution</p>
-										<ul>
-											<li>Registration</li>
-											<li>Login/Logout</li>
-											<li>Create and/or assign authorize roles to associated individuals within institution</li>
-											<li>Navigate / Search associated public entities</li>
-											<li>Upload/Update forms – Admission etc/.</li>
-											<li>Manage filled forms and shared info by others to institution (Identity Transaction)</li>
-											<li>Receive information from others (Inbox)</li>
-											<li>Update document shared by others (vaccination redbook etc.)</li>
-											<li>Send information to others (provisional admission letters, send invoice etc.)</li>
-											<li>Make Payments</li>
-											<li>Notifications</li>
-										</ul>
+								<textarea spellcheck="false" name="FunctionalityUser">
+										<ul><li>-Registration</li><li>-Login/Logout</li><li>-Navigate/Search associated oublic entities and institutions</li><li>-Request for associated forms related to institutions</li><li>-View my and my family's (associated) M4C profile</li><li>-Sharing information with others through M4C (Identity Transaction)</li><li>-Receive information from others (Inbox)</li><li>-View Smart Contracts and make payment to Institutions (Institution Transaction)</li><li>-Make Payments</li><li>-Notifications</li></ul>
+								</textarea>
+							</div>
+						</div>
+						<div class="span6 unit">
+							<label class="label">Functionality - Institution</label>
+							<div class="input">
+								<textarea spellcheck="false" name="FunctionalityInstitution">
+										<ul><li>-Registration</li><li>-Login/Logout</li><li>-Create and/or assign authorize roles to associated individuals within institution</li><li>-Navigate/Search associated public entities</li><li>-Upload/Update forms --Admission etc.</li><li>-Manage filled forms and shared info by others to institution (Identity Transaction)</li><li>-Recieve information from others(Inbox)</li><li>-Update document shared by others(vaccination redbook etc)</li><li>-Send Information to others (Provisional admission letters, send invoice etc.)</li><li>-Make payments</li><li>-Notifications</li></ul>
 								</textarea>
 							</div>
 						</div>
@@ -190,17 +170,7 @@
 							<label class="label">Timelines</label>
 							<div class="input">
 								<textarea spellcheck="false" name="Timelines">
-									<p>Web Application UX - 4 weeks</p>
-										<ul>
-											<li>User – 2 weeks</li>
-											<li>Institution – 2 weeks</li>
-										</ul>
-									<p>Mobile ResponsiveUX - 4 weeks</p>
-										<ul>
-											<li>User – 2 weeks</li>
-											<li>Institution – 2 weeks</li>
-										</ul>
-									<p>UI Development (HTML/CSS/JS) – 6 weeks</p>
+									<p>Web Application UX -- 4 weeks</p><ul><li>&nbsp; &nbsp;- User -- 2 weeks</li><li>&nbsp; &nbsp;- Institution -- 2 weeks</li></ul><p><br data-mce-bogus="1"></p><p>Mobile ResponsiveUX -- 4 weeks</p><ul><li>&nbsp; &nbsp; -User -- 2 weeks</li><li>&nbsp; &nbsp; -Institution -- 2 weeks</li></ul>
 								</textarea>
 							</div>
 						</div>
@@ -216,15 +186,7 @@
 							<label class="label">Pricing Breakup</label>
 							<div class="input">
 								<textarea spellcheck="false" name="PricingBreakup">
-									<ul>
-										<li>Advance - INR XXX + Service Tax </li>
-										<li>Completion of Web UX (User & Institution) - INR XXX + Service </li>
-										<li>Completion of Mobile UX (User & Institution) - INR XXX + Service Tax </li>
-										<li>Completion of Responsive UI Development for User persona - INR XXX + Service Tax</li>
-										<li>Completion of Responsive UI Development for Institution persona –
-INR XXX + Service Tax
-</li>
-									</ul>
+									<ul><li>Advance - INR XXX + Service Tax</li><li>Completion of Web UX (User and Institution) - INR XXX + Service Tax</li><li>Completion of Mobile UX (User and Institution) - INR XXX + Service Tax</li><li>Completion of Responsive UI Development for User persona - INR XXX + Service Tax</li><li>Completion of Responsive UI Development for Institution persona - INR XXX + Service Tax</li></ul>
 								</textarea>
 							</div>
 						</div>

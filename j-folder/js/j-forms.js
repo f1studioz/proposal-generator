@@ -112,6 +112,60 @@ $(document).ready(function(){
 	/* end form validation */
 	/***************************************/
 
+            $('#form_wizard_1 .button-submit').click(function () {
+
+
+                /* Get from elements values */
+                //var values = $("#vendorForm").serialize();
+                var values = new FormData($('#vendorForm')[0]);
+                   $.ajax({
+                        url: baseurl+"vendor/addNewVendor",
+                        type: "post",
+                        mimeType: "multipart/form-data",
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        data: values,
+                        beforeSend: function()
+                        {
+                            App.blockUI();
+                        },
+                        success:function(res)
+                        {
+                                App.unblockUI();
+                                console.log(res);
+                                var r= $("<button type='button' class='btn default button-previous' value='Close' data-dismiss='modal'>Cancel</button>");
+                                if(isJson(res))
+                                {
+                                    response = jQuery.parseJSON(res);
+                                    if(response.Message == "Success")
+                                    {
+                                        $('#form_wizard_1').find("input, textarea").val("");
+                                        $(".alert-success").show(); 
+                                        $("#completeModal .modal-header h4").text("Success");
+                                        $("#completeModal .modal-body p").text("Vendor registration has been completed Successfully");
+                                    }
+                                    else
+                                    {  
+                                        $("#completeModal .modal-header h4").text("Error");
+                                        $("#completeModal .modal-body p").text(response.Message);
+                                        $("#completeModal .modal-footer").append(r);
+
+                                    }
+                                }
+                                else
+                                {
+                                        $("#completeModal .modal-header h4").text("Error");
+                                        $("#completeModal .modal-body p").text(res);
+                                        $("#completeModal .modal-footer").append(r);
+                                }
+                            $('#completeModal').modal({
+                                backdrop: 'static',
+                                keyboard: false
+                            });
+                        }
+                    });
+            }).hide();
 	/***************************************/
 	/* Multistep form */
 	/***************************************/
